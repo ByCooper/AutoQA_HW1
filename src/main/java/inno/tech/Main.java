@@ -17,11 +17,7 @@ public class Main {
 
     //Задача №2
     public static String checkAccess(int age){
-        if(age > 18){
-            return "Allowed";
-        } else {
-            return "Denied";
-        }
+        return (age > 18) ? "Allowed" : "Denied";
     }
 
     //Задача №3
