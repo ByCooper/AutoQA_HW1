@@ -17,14 +17,12 @@ dependencies {
 }
 
 tasks.test {
-    useJUnitPlatform()
-}
-
-tasks.register("simpleTask") {
-    group = "simpleFolder"
-    println("======Tag++++++")
-}
-
-tasks.named("simpleTask") {
-    dependsOn("clean")
+    useJUnitPlatform() {
+        includeTags("one")
+    }
+    afterSuite {desc, result ->
+        if (desc.parent == null) {
+            println("Test run is over")
+        }
+    }
 }
