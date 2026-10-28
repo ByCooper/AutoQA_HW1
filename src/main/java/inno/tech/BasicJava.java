@@ -47,7 +47,7 @@ public class BasicJava {
         for(int i = start - 1; i >= 1 ; i--) {
             result.append(", ").append(i);
         }
-        result.append(". Поехали!");
+        result.append(" Поехали!");
         return result.toString();
     }
 
@@ -92,17 +92,12 @@ public class BasicJava {
     }
 
     //Задача №10
-    public static String[] revers(String[] arr) {
-        int begin = 0;
-        int end = arr.length - 1;
-        while (begin < end) {
-            String buffer = arr[begin];
-            arr[begin] = arr[end];
-            arr[end] = buffer;
-            begin++;
-            end--;
+    public static String[] reverse(String[] arr) {
+        String[] reverseArr = new String[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            reverseArr[i] = arr[arr.length - 1 - i];
         }
-        return arr;
+        return reverseArr;
     }
 
     //Задача №11
