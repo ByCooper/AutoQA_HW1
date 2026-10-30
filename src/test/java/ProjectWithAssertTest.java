@@ -24,6 +24,11 @@ public class ProjectWithAssertTest {
         System.out.println("Test method end" + '\n' + "================================");
     }
 
+    @AfterAll
+    static void gameOver() {
+        System.out.println("Test run is over");
+    }
+
     @Test
     @Tag("one")
     void testIsEven() {
@@ -49,9 +54,9 @@ public class ProjectWithAssertTest {
     void testCheckAccess() {
         Random random = new Random();
         int testDigit = random.nextInt(0, 99);
-        assertThat(BasicJava.isEven(testDigit))
+        assertThat(BasicJava.checkAccess(testDigit))
                 .as("Возраст должен быть старше 18")
-                .isTrue();
+                .isEqualTo("Allowed");
     }
 
     @Tag("one")
@@ -67,10 +72,11 @@ public class ProjectWithAssertTest {
 
 
     @Tag("one")
-    @Test
+    @RepeatedTest(value = 16,name = "Повтор {currentRepetition} из {totalRepetitions}")
     void testIsPositive() {
         Random random = new Random();
         int testDigit = random.nextInt(-10, 5);
+        System.out.println(testDigit);
         assertThat(BasicJava.isPositive(testDigit))
                 .as("Проверяем, что число положительное")
                 .isTrue();

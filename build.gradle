@@ -18,12 +18,5 @@ dependencies {
 }
 
 tasks.test {
-    useJUnitPlatform() {
-        includeTags("one")
-    }
-    afterSuite {desc, result ->
-        if (desc.parent == null) {
-            println("Test run is over")
-        }
-    }
+    useJUnitPlatform()
 }
