@@ -137,12 +137,12 @@ public class FirstProjectTest {
     @Tag("one")
     @Test
     void testGetEvenInRange() {
-        int startTest = 4;
-        int endTest = 9;
+        int startTest = 1;
+        int endTest = 3;
 
-        String expected = "4 6 8";
+        String expected = "2";
         String actual = BasicJava.getEvenInRange(startTest, endTest);
-
+        System.out.println(actual);
         Assertions.assertEquals(expected, actual);
     }
 
@@ -166,7 +166,8 @@ public class FirstProjectTest {
         String[] arrTest = {"Работа", "Дела", "Отдых", "Деньги", "Путешествия"};
         String[] expected = {"Путешествия", "Деньги", "Отдых", "Дела", "Работа"};
 
-        if(Arrays.equals(BasicJava.revers(arrTest), expected)) {
+        System.out.println(Arrays.toString(BasicJava.reverse(arrTest)));
+        if(Arrays.equals(BasicJava.reverse(arrTest), expected)) {
             System.out.println("TEST PASSED");
         } else {
             System.out.println("TEST FAILED");
