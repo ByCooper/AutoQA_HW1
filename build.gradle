@@ -16,7 +16,9 @@ dependencies {
     implementation("com.fasterxml.jackson.core:jackson-core:2.22.4")
     testImplementation("org.assertj:assertj-core:3.27.7")
 }
-
+/**
+ * Запуск теста по тегу - в терминале ввести команду ./gradlew test -Ptags='tag'
+ */
 tasks.test {
     useJUnitPlatform()
 }
