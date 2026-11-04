@@ -15,6 +15,7 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation("com.fasterxml.jackson.core:jackson-core:2.22.4")
     testImplementation("org.assertj:assertj-core:3.27.7")
+    implementation("io.rest-assured:rest-assured:6.0.1")
 }
 /**
  * Запуск теста по тегу - в терминале ввести команду ./gradlew test -Ptags='tag'
