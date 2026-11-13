@@ -20,8 +20,10 @@ dependencies {
     implementation("com.codeborne:selenide:7.19.0")
 }
 /**
- * Запуск теста по тегу - в терминале ввести команду ./gradlew test -Ptags='tag'
+ * Запуск теста по тегу - в терминале ввести команду ./gradlew test -Ptags='one'
  */
 tasks.test {
-    useJUnitPlatform()
+    useJUnitPlatform() {
+        includeTags("one", "api")
+    }
 }
